@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+
 <html>
 <head>
     <title>Weather Page</title>
@@ -43,14 +45,14 @@
             let coordinates = responseJson.coord.lat + "," + responseJson.coord.lon;
 
             let elementsArray = [];
-            let cityName =  document.createElement("H2");
+            let cityName = document.createElement("H2");
             cityName.innerText = submitInput.value + ", " + responseJson.sys.country;
             let cityTitle = document.createElement("H2");
             cityTitle.innerText = responseJson.name;
             let weatherCondition = document.createElement("H3");
             weatherCondition.innerText = responseJson.weather[0].main;
             let weatherDescription = document.createElement("H4");
-            weatherDescription.innerText =responseJson.weather[0].description;
+            weatherDescription.innerText = responseJson.weather[0].description;
             let weatherIcon = document.createElement("IMG");
             weatherIcon.setAttribute("src", "http://openweathermap.org/img/w/" + responseJson.weather[0].icon + ".png");
             let temperature = document.createElement("DIV");
@@ -65,18 +67,15 @@
             windDirection.setAttribute("src", "./img/compass-rose.gif");
             windDirection.style.transform = "rotate(" + responseJson.wind.deg + "deg)";
             let map = document.createElement("IMG");
-            map.setAttribute("src", "https://maps.googleapis.com/maps/api/staticmap?center=" + coordinates + "&markers=color:blue=%7C"+coordinates+"&zoom=5&size=600x300&maptype=hybrid&key=AIzaSyAtKWPjORxOFfanjbXsI4YI-wNCUi3zKcE");
+            map.setAttribute("src", "https://maps.googleapis.com/maps/api/staticmap?center=" + coordinates + "&markers=color:blue=%7C" + coordinates + "&zoom=5&size=600x300&maptype=hybrid&key=AIzaSyAtKWPjORxOFfanjbXsI4YI-wNCUi3zKcE");
 
 
-
-
-            elementsArray.push(cityName, cityTitle, weatherCondition, weatherDescription, weatherIcon,temperature, maxTemperature, minTemperature, windSpeed, windDirection, map);
+            elementsArray.push(cityName, cityTitle, weatherCondition, weatherDescription, weatherIcon, temperature, maxTemperature, minTemperature, windSpeed, windDirection, map);
 
             elementsArray.forEach(function (element) {
                 resultsDiv.appendChild(element);
 
             });
-
 
 
         }
@@ -135,10 +134,10 @@
     submitBtn.addEventListener("click", () => {
         getWeather(submitInput.value);
     });
-    submitInput.addEventListener("keyup", function(event) {
+    submitInput.addEventListener("keyup", function (event) {
         event.preventDefault();
         if (event.keyCode === 13) {
-           submitBtn.click();
+            submitBtn.click();
         }
     });
 
