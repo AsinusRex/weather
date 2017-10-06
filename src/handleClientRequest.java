@@ -38,7 +38,7 @@ public class handleClientRequest extends HttpServlet {
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
 
-        String modifiedAPIData = weatherDataFromAPI.substring(0, weatherDataFromAPI.length() - 1);
+        String modifiedAPIData = weatherDataFromAPI.substring(0, weatherDataFromAPI.length() - 2);
 
 String responseToPage = weatherDataFromAPI + ",{\"appKey\":\"" + GMAppKey + "\"},{\"appURL\":\"" + GMBaseURL + "\"}";
 
