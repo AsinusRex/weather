@@ -5,13 +5,13 @@
          version="3.1">
 
     <servlet>
-        <servlet-name>getWeatherServlet</servlet-name>
-        <servlet-class>getWeather</servlet-class>
+        <servlet-name>handleClientRequest</servlet-name>
+        <servlet-class>handleClientRequest</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>getWeatherServlet</servlet-name>
-        <url-pattern>/getWeather</url-pattern>
+        <servlet-name>handleClientRequest</servlet-name>
+        <url-pattern>/handleClientRequest</url-pattern>
     </servlet-mapping>
 
 </web-app>
